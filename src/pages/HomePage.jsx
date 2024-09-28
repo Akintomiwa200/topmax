@@ -1,26 +1,19 @@
+import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
 
-import Home from "../components/Home"
-import Banner from '../components/Banner'
-import About from "../components/About"
-import Banner2 from '../components/Banner2'
-import Banner4 from '../components/Banner4'
-import Contact from "../components/Contact"
-import Companies from  '../components/Companies'
-import Footer from '../components/Footer'
+const HomePage = () => {
+    const navigate = useNavigate();
 
-const HomePage= ()=>{
-return (
-    <>
-            <Home/>
-            <Banner/>
-            <About/> 
-            <Banner2/>
-            <Companies/>
-            <Contact/>
-            <Banner4/>
-            <Footer/>
-    </>
-)
-}
+    const handleStartQuiz = () => {
+        navigate('/instruction');
+    };
 
-export default HomePage
+    return (
+        <div className="home-page">
+            <h1>Welcome to the Quiz App</h1>
+            <Button text="Start Quiz" onClick={handleStartQuiz} />
+        </div>
+    );
+};
+
+export default HomePage;
