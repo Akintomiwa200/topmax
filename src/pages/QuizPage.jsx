@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Question from '../components/Question';
 import Modal from '../components/ScoreModal';
+import { FaLeftLong, FaRightLong } from 'react-icons/fa6';
 
 const questions = [
     {
@@ -52,19 +53,19 @@ const QuizPage = () => {
     };
 
     return (
-        <div className="quiz-page">
+        <div className="flex flex-col items-center justify-center h-[100vh]">
             {!isQuizCompleted ? (
                 <>
                     <Question
                         question={questions[currentQuestionIndex]}
                         onAnswerSelected={handleAnswerSelected}
                     />
-                    <div className="navigation-buttons">
-                        <button onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
-                            Previous
+                    <div className="flex w-[50vw] justify-between my-8">
+                        <button className='border border-red-400 px-4 py-2 rounded-lg hover:bg-red-500 hover:text-white text-2xl flex items-center gap-1 font-light' onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
+                            <FaLeftLong />  Previous
                         </button>
-                        <button onClick={handleNextQuestion}>
-                            {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+                        <button className='border border-red-400 px-8 py-2 rounded-lg hover:bg-red-500 hover:text-white text-2xl flex items-center gap-1 font-light' onClick={handleNextQuestion}>
+                            <FaRightLong />   {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
                         </button>
                     </div>
                 </>
