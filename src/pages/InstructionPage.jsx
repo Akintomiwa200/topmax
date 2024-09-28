@@ -9,7 +9,7 @@ const InstructionPage = () => {
     };
 
     return (
-        <div className="flex flex-col w-full justify-center items-center min-h-[100vh]">
+        <div className="instruction-page">
             <h2>Quiz Instructions</h2>
             <p>Read the instructions before starting the quiz...</p>
             <Button text="Proceed to Quiz" onClick={handleProceed} />

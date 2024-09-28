@@ -10,9 +10,9 @@ const Question = ({ question, onAnswerSelected }) => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center w-[100vw]">
-            <h3 className='text-4xl'>{question.text}</h3>
-            <div className=" grid grid-cols-2 h-[30vh] w-[69vw]">
+        <div className="question-container">
+            <h3>{question.text}</h3>
+            <div className="options">
                 {question.options.map((option, index) => (
                     <button
                         key={index}
