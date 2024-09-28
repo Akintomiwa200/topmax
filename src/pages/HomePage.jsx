@@ -9,7 +9,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="home-page">
+        <div className="flex flex-col w-full justify-center items-center min-h-[100vh]">
             <h1>Welcome to the Quiz App</h1>
             <Button text="Start Quiz" onClick={handleStartQuiz} />
         </div>
